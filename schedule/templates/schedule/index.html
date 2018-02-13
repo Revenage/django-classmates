@@ -43,12 +43,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for day_name in days %}
+                            {% for schedule in schedules %}
                                 <tr>
-                                    <th scope="row">{{day_name}}</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <th scope="row">{{schedule}}</th>
+                                    <td>{{schedule.subject}}</td>
+                                    <td>{{schedule.grade}}</td>
+                                    <td>{{schedule.teacher}}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>

@@ -27,13 +27,13 @@ TIME_FORMAT = "%H:%M"
 class Grade(models.Model):
     name = models.CharField(max_length=3)
     def __str__(self):
-        return 'Grade: {}'.format(self.name)
+        return self.name
 
 class Subject(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField()
     def __str__(self):
-        return 'Subject: {}'.format(self.name)
+        return self.name
 
 class Teacher(models.Model):
     name = models.CharField(max_length=30)
@@ -42,7 +42,7 @@ class Teacher(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     onDuty = models.BooleanField(default = True)
     def __str__(self):
-        return 'Teacher: {}'.format(self.name + ' '+ self.surname)
+        return self.name + ' '+ self.surname
 
 
 class ClassRoom(models.Model):
@@ -50,14 +50,14 @@ class ClassRoom(models.Model):
     floor = models.PositiveSmallIntegerField()
     available = models.BooleanField(default = True)
     def __str__(self):
-        return 'Classroom: {}'.format(self.number)
+        return self.number
 
 class LessonTime(models.Model):
     number = models.PositiveSmallIntegerField()
     start = models.TimeField()
     end = models.TimeField()
     def __str__(self):
-        return 'Lesson: {}'.format(self.start.strftime(TIME_FORMAT) + ' - ' + self.end.strftime(TIME_FORMAT))
+        return self.start.strftime(TIME_FORMAT) + ' - ' + self.end.strftime(TIME_FORMAT)
 
 class SheduleItem(models.Model):
     day= models.PositiveSmallIntegerField(default=0, choices=DAYS_OF_WEEK)
@@ -69,5 +69,5 @@ class SheduleItem(models.Model):
     room = models.ForeignKey(ClassRoom, on_delete=models.CASCADE)
 
     def __str__(self):
-        return 'Lesson on {}'.format(DAYS_OF_WEEK[int(self.day)][1])
+        return DAYS_OF_WEEK[int(self.day)][1]
 
