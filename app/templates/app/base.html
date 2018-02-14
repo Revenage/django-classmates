@@ -14,6 +14,7 @@
         {% endblock %}
     </head>
     <body class="{{body_class}}">
+        {% block content %}
         <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
             {% block header %}
                 <header class="masthead mb-auto">
@@ -43,6 +44,7 @@
             {% block scripts %}
             {% endblock %}
         </div>
+        {% endblock %}
     </body>
     
 </html>
