@@ -1,7 +1,7 @@
 {% extends 'error/base.html' %}
 
 {% block title %}
-    Page not found 404
+    Sorry! You haven't access 403
 {% endblock title %}
     
 
@@ -19,7 +19,8 @@
                     <div class="clip"><div class="shadow"><span class="digit firstDigit"></span></div></div>
                     <div class="msg">OH!<span class="triangle"></span></div>
                 </div>
-                <h2 class="h1">Page not found 404</h2>
+                <h2 class="h1">Sorry! You haven't access 403</h2>
+                <h2><a href="{% url 'login'%}">Click here to login</a></h2>
             </div>
         </div>
     </div>

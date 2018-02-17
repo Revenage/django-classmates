@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views.generic.list import ListView
 from .models import SheduleItem, DAYS_OF_WEEK
 
@@ -7,6 +9,9 @@ class ScheduleView (ListView):
     template_name = 'schedule/index.html'
     context_object_name = 'schedules'
     
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ScheduleView, self).dispatch(*args, **kwargs)
 
 # Create your views here.
 # def schedule(request):
