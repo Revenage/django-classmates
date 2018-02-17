@@ -1,7 +1,6 @@
 from django.contrib import admin
-from django.conf.urls import include, url
+from django.conf.urls import include, url, handler404, handler500
 from django.urls import path
-from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
@@ -13,3 +12,6 @@ urlpatterns = [
     url(r'^logout/$', views.log_out, name='logout'),
     url(r'^signup/$', views.signup, name='signup'),
 ]
+
+handler404 = views.error_404
+handler500 = views.error_500

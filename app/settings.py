@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'r@g+jtoq(mj&%$bn-@(^0$&esdwv*g4r#xyq7#=x+-d(-cu0_o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+# DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'revenage.pythonanywhere.com', 'localhost']
+
+DEBUG = False
 
 
 # Application definition

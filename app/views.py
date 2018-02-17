@@ -38,3 +38,9 @@ def log_in(request):
 def log_out(request):
     logout(request)
     return redirect('home')
+
+def error_404(request):
+    return render(request,'error/404.html', {'data': {}})
+
+def error_500(request):
+    return render(request,'error/500.html', {'data': {}})
