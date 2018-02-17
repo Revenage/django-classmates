@@ -1,7 +1,8 @@
 "use strict";
 
 (function() {
-  var number = '404';
+	if(!document.title) return;
+  var number = document.title.match(/\d+/)[0]
   var num_arr = number.split('');
   function randomNum() {
     return Math.floor(Math.random() * 9) + 1;
