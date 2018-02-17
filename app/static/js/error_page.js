@@ -8,7 +8,7 @@
   }
   var time = 30,
     loppArr = []
-  var selector = ['third', '.second', 'first']
+  var selector = ['third', 'second', 'first']
 	var i = 0;
   
   function run(s,j) {
