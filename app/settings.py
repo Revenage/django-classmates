@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'revenage.pythonanywhere.com', 'localhost']
 INSTALLED_APPS = [
     'app',
     'schedule',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

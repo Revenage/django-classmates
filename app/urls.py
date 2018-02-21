@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^$', views.startpage, name='startpage'),
     url(r'^home/$', views.home, name='home'),
     url(r'^schedule/', include('schedule.urls'), name='schedule'),
-    url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^accounts/', include('accounts.urls')),
 ]
 
 handler403 = views.error_403

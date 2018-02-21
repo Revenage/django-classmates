@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from .forms import SignUpForm
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseForbidden
 
