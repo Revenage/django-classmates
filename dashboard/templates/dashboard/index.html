@@ -1,0 +1,72 @@
+{% extends 'app/base.html' %}
+{% load staticfiles %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block header %}  
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{% url 'dashboard' %}">Dashboard</a>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="{% url 'logout' %}">Sign out</a>
+          </li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block page %}
+    <div class="container-fluid">
+        <div class="row">
+          <nav class="col-md-2 text-left d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a {% if location == 'dashboard' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'dashboard' %}">
+                    <span data-feather="home"></span>
+                    Overview <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a {% if location == 'subjects' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'subjects' %}">
+                    <span data-feather="file"></span>
+                    Subjects
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a {% if location == 'teachers' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'teachers' %}">
+                    <span data-feather="file"></span>
+                    Teachers
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a {% if location == 'students' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'students' %}">
+                    <span data-feather="file"></span>
+                    Students
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a {% if location == 'grades' %} class="nav-link active" {% else %} class="nav-link" {% endif %} href="{% url 'grades' %}">
+                    <span data-feather="file"></span>
+                    Grades
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          {% block main %}
+            <main role="main" class="col-md-8 ml-sm-auto col-lg-8 pt-3 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Dashboard</h1>
+                </div>
+            </main>
+          {% endblock main %}
+            <div class="col-md-2 col-lg-2"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/poper.min.js' %}"></script>
+{% endblock %}

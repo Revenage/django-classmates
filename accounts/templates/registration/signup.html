@@ -1,10 +1,26 @@
 {% extends 'app/base.html' %}
 
+{% block title %}Login{% endblock %}
+
+{% load staticfiles %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
+  <form class="form-signin text-center" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    <label for="id_username" class="sr-only">Username</label>
+    <input type="text" id="id_username" name="username" class="form-control" placeholder="Name" required autofocus>
+    <label for="id_email" class="sr-only">Email</label>
+    <input type="text" id="id_email" name="email" class="form-control" placeholder="e-mail" required>
+    <label for="id_password1" class="sr-only">Password</label>
+    <input type="password" id="id_password1" name="password1" class="form-control" placeholder="Password" required>
+    <label for="id_password2" class="sr-only">Password</label>
+    <input type="password" id="id_password2" name="password2" class="form-control" placeholder="Password" required>
+    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign up" />
   </form>
 {% endblock %}

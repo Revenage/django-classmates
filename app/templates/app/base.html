@@ -10,12 +10,13 @@
         <title>Document</title>
         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         {% block links %}
         {% endblock %}
     </head>
     <body class="{{body_class}}">
         {% block content %}
-        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <div class="cover-container d-flex h-100 mx-auto flex-column">
             {% block header %}
                 <header class="masthead mb-auto">
                     <div class="inner">
@@ -33,7 +34,7 @@
                     <h1 class="cover-heading">Empy page</h1>
                 </main>
             {% endblock %}
-            <footer class="mastfoot mt-auto">
+            <footer class="mastfoot mt-auto text-center">
                 <div class="inner">
                     <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
                 </div>

@@ -1,0 +1,14 @@
+{% extends 'dashboard/index.html' %}
+{% load widget_tweaks %}
+
+{% block main %}
+    <main role="main" class="col-md-8 ml-sm-auto col-lg-8 pt-3 px-4">
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <p>Are you sure you want to delete "{{ object }}"?</p>
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="{{ view.success_url }}" class="btn btn-default">No</a>
+        </form>
+    </main>
+{% endblock main %}
+
