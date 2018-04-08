@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'app',
     'schedule',
     'accounts',
+    'calendar_app',
     'dashboard',
     'django.contrib.admin',
     'django.contrib.auth',

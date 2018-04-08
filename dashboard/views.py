@@ -18,9 +18,6 @@ def json_test(request):
     response_data = {'test': 2, 'qwerty': 'test'}
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
-def teachers(request):
-    return render(request, 'dashboard/teachers.html', {'body_class': 'text-center', 'location': 'teachers'})
-
 class TeacherList (ListView):
     model = Teacher
     def get_context_data(self, **kwargs):

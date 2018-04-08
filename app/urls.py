@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^dashboard/', include('dashboard.urls'), name='dashboard'),
     url(r'^schedule/', include('schedule.urls'), name='schedule'),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^calendar/', include('calendar_app.urls'), name='calendar'),
 ]
 
 handler403 = views.error_403
